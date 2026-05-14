@@ -751,39 +751,46 @@ window.onload = function(){
 
 }
 
-/* =========================
-   ACTIVE NAV LINK
-========================= */
+document.addEventListener("DOMContentLoaded", () => {
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-links a");
 
-window.addEventListener("scroll", () => {
+  let ticking = false;
 
-  let current = "";
+  window.addEventListener("scroll", () => {
 
-  sections.forEach(section => {
+    if (!ticking) {
 
-    const sectionTop = section.offsetTop - 120;
+      window.requestAnimationFrame(() => {
 
-    if(window.scrollY >= sectionTop){
-      current = section.getAttribute("id");
-    }
+        let current = "";
 
-  });
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 120;
 
-  navLinks.forEach(link => {
+          if (window.scrollY >= sectionTop) {
+            current = section.id;
+          }
+        });
 
-    link.style.color = "var(--muted)";
+        navLinks.forEach(link => {
+          link.classList.remove("active");
 
-    if(link.getAttribute("href") === "#" + current){
-      link.style.color = "var(--accent)";
+          if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+          }
+        });
+
+        ticking = false;
+      });
+
+      ticking = true;
     }
 
   });
 
 });
-
 </script>
 
 </body>
