@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>H. Rubel | IT Portfolio</title>
+
+<meta name="description"
+content="Professional IT Portfolio of MD. HASANUZZAMAN RUBEL">
+
+<meta name="keywords"
+content="IT Support, System Administrator, Network Engineer, Microsoft 365, Active Directory">
+
+<meta name="author"
+content="MD. HASANUZZAMAN RUBEL">
+
+<meta property="og:title" content="H. Rubel | IT Portfolio">
+<meta property="og:description" content="Professional IT Portfolio">
+<meta property="og:type" content="website">
+<meta property="og:image" content="profile.jpg">
+
+<link rel="icon" href="favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   ROOT THEME
+========================= */
+:root{
+  --bg:#0a0f1c;
+  --card:#111a2e;
+  --text:#e5e7eb;
+  --muted:#9aa4b2;
+  --accent:#4da3ff;
+  --panel:#0f172a;
+  --border:rgba(255,255,255,0.05);
+}
+
+body.light{
+  --bg:#f4f6fb;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --accent:#2563eb;
+  --panel:#ffffff;
+  --border:rgba(15,23,42,0.1);
+}
+
+/* =========================
+   BASE
+========================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Inter,sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:80px;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:60px;
+  background:var(--panel);
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 25px;
+  z-index:1000;
+  backdrop-filter:blur(10px);
+}
+
+.logo{
+  color:var(--accent);
+  font-weight:700;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+
+.nav-links::-webkit-scrollbar{
+  display:none;
+}
+
+.nav-links a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:13px;
+  transition:0.25s ease;
+  white-space:nowrap;
+}
+
+.nav-links a:hover{
+  color:var(--accent);
+}
+
+/* =========================
+   THEME BUTTON
+========================= */
+.theme-btn{
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--text);
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.25s ease;
+  font-size:16px;
+}
+
+.theme-btn:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+  transform:translateY(-1px);
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.container{
+  display:grid;
+  grid-template-columns:300px 1fr;
+  min-height:100vh;
+  margin-top:60px;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar{
+  background:var(--panel);
+  padding:30px;
+  border-right:1px solid var(--border);
+  position:sticky;
+  top:60px;
+  height:calc(100vh - 60px);
+  text-align:center;
+}
+
+.avatar{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  border:2px solid var(--accent);
+  object-fit:cover;
+}
+
+.name{
+  margin-top:15px;
+  font-size:20px;
+  color:var(--accent);
+  font-weight:700;
+}
+
+.role{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:5px;
+  line-height:1.6;
+}
+
+/* =========================
+   BUTTON SYSTEM
+========================= */
+.btn-group{
+  margin-top:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.btn{
+  display:block;
+  width:100%;
+  text-align:center;
+  padding:10px 12px;
+  font-size:13px;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.25s ease;
+}
+
+.btn.primary{
+  background:var(--accent);
+  color:#000;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  opacity:0.95;
+}
+
+/* =========================
+   MAIN
+========================= */
+.main{
+  padding:40px;
+}
+
+/* =========================
+   SECTION
+========================= */
+.section{
+  margin-top:30px;
+}
+
+.section-title{
+  font-size:16px;
+  color:var(--accent);
+  margin-bottom:12px;
+  font-weight:600;
+}
+
+/* =========================
+   CARD
+========================= */
+.card{
+  background:var(--card);
+  padding:18px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  margin-bottom:12px;
+  animation:fadeUp 0.5s ease;
+}
+
+/* =========================
+   TEXT
+========================= */
+.summary-text{
+  color:var(--muted);
+  line-height:1.8;
+  font-size:14px;
+}
+
+ul{
+  margin-left:18px;
+  color:var(--muted);
+  line-height:1.8;
+  font-size:14px;
+}
+
+li{
+  margin-bottom:6px;
+}
+
+/* =========================
+   EXPERIENCE TIMELINE
+========================= */
+.exp{
+  position:relative;
+  border-left:2px solid var(--accent);
+  padding-left:22px;
+  margin-left:8px;
+}
+
+.exp::before{
+  content:"";
+  position:absolute;
+  left:-7px;
+  top:8px;
+  width:12px;
+  height:12px;
+  background:var(--accent);
+  border-radius:50%;
+}
+
+.job{
+  margin-bottom:10px;
+}
+
+.job b{
+  font-size:15px;
+}
+
+.job small{
+  color:var(--muted);
+  line-height:1.8;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer{
+  text-align:center;
+  padding:30px 10px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:900px){
+
+  .container{
+    grid-template-columns:1fr;
+  }
+
+  .navbar{
+    padding:0 12px;
+  }
+
+  .nav-links{
+    margin:0 10px;
+  }
+
+  .nav-links a{
+    font-size:12px;
+  }
+
+  .sidebar{
+    position:relative;
+    height:auto;
+    padding:25px 18px;
+    border-right:none;
+    border-bottom:1px solid var(--border);
+  }
+
+  .main{
+    padding:25px 18px;
+  }
+
+}
+
+@media(max-width:480px){
+
+  .avatar{
+    width:90px;
+    height:90px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+  <div class="logo">h-rubel</div>
+
+  <nav class="nav-links">
+
+    <a href="#home">Home</a>
+    <a href="#competence">Competences</a>
+    <a href="#skills">Skills</a>
+    <a href="#exp">Experience</a>
+    <a href="#edu">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#cert">Certifications</a>
+    <a href="#languages">Languages</a>
+
+  </nav>
+
+  <button class="theme-btn"
+  aria-label="Toggle Theme"
+  onclick="toggleTheme()"
+  id="themeToggle">
+    🌙
+  </button>
+
+</header>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+  <img src="profile.jpg" class="avatar" alt="Profile Image">
+
+  <div class="name">MD. HASANUZZAMAN RUBEL</div>
+
+  <div class="role">
+    Sr. Executive IT<br>
+    Indochine International Ltd.
+  </div>
+
+  <div class="btn-group">
+
+    <a class="btn primary"
+    href="https://www.google.com/maps/search/Dhaka+Bangladesh"
+    target="_blank"
+    rel="noopener noreferrer">
+      📍 Dhaka, Bangladesh
+    </a>
+
+    <a class="btn primary"
+    href="mailto:hrubel@outlook.com">
+      📧 hrubel@outlook.com
+    </a>
+
+    <a class="btn primary"
+    href="tel:+8801671115956">
+      📱 +8801671115956
+    </a>
+
+    <a class="btn primary"
+    href="https://linkedin.com/in/hasanuzzaman-r"
+    target="_blank"
+    rel="noopener noreferrer">
+      🔗 LinkedIn
+    </a>
+
+    <a class="btn primary"
+    href="CV_HasanuzzamanRubel.pdf"
+    download>
+      📄 Download CV
+    </a>
+
+  </div>
+
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- SUMMARY -->
+  <section id="home" class="section">
+
+    <div class="section-title">Career Summary</div>
+
+    <div class="card">
+
+      <p class="summary-text">
+        IT professional with experience delivering enterprise-level IT support to 200+ users in fast-paced environments, ensuring high system uptime, smooth operations, and minimal downtime. Skilled in resolving hardware, software, OS, printer, and network issues with end-to-end responsibility for system and network administration. Proficient in Windows OS, Microsoft 365 administration, Active Directory management, and remote support tools (TeamViewer, AnyDesk). Strong focus on secure IT infrastructure and rapid incident resolution to ensure uninterrupted business continuity and consistent user productivity.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CORE COMPETENCES -->
+  <section id="competence" class="section">
+
+    <div class="section-title">Core Competences</div>
+
+    <div class="card">
+
+      <ul>
+        <li>Enterprise IT Support (200+ Users)</li>
+        <li>Hardware, Software & Network Troubleshooting</li>
+        <li>Windows OS, Microsoft 365 & Active Directory</li>
+        <li>LAN/WAN Networking & Firewall (TCP/IP, DNS, DHCP)</li>
+        <li>IT Infrastructure Monitoring & Endpoint Security</li>
+        <li>Remote Support (TeamViewer, AnyDesk, RDP)</li>
+        <li>IT Asset & Vendor Management</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section id="skills" class="section">
+
+    <div class="section-title">Technical Skills</div>
+
+    <div class="card">
+
+      <ul>
+
+        <li>Windows OS (Installation, Deployment, Configuration & Troubleshooting)</li>
+        <li>Microsoft 365 Administration (User, Email, Applications, Licensing)</li>
+        <li>Active Directory (User, Group & Access Management)</li>
+        <li>LAN/WAN Networking (TCP/IP, DNS, DHCP Configuration & Troubleshooting)</li>
+        <li>Network Devices (Router, Switch & Firewall Configuration & Management)</li>
+        <li>Hardware & Peripheral Support (Desktop, Laptop, Printer, Scanner)</li>
+        <li>Remote Support Tools (TeamViewer, AnyDesk, Remote Desktop Protocol)</li>
+        <li>Endpoint Security & IT Tools (Antivirus Management, Patch Updates, System Protection)</li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="exp" class="section">
+
+    <div class="section-title">Experience</div>
+
+    <article class="card exp">
+
+      <div class="job">
+
+        <b>Indochine International Ltd.</b><br>
+
+        <small>Sr. Executive IT (January, 2025 – Present)</small><br>
+
+        <small>Executive IT (September, 2022 – December, 2024)</small>
+
+        <ul>
+          <li>Deliver enterprise IT support to 200+ users ensuring high system uptime and minimal operational downtime</li>
+          <li>Diagnose and resolve hardware, software, OS, printer, and network issues within SLA timelines</li>
+          <li>Install, configure, and maintain desktops, laptops, printers, scanners, and other IT peripherals</li>
+		  <li>Deploy OS, install business applications, and perform system configuration and maintenance</li>
+          <li>Configure and manage routers, switches, wireless devices, and firewalls for stable network performance</li>
+          <li>Monitor IT infrastructure for availability, performance, and endpoint security compliance across all systems</li>
+		  <li>Provide remote support using TeamViewer, AnyDesk, and Remote Desktop tools for quick issue resolution</li>
+          <li>Enforce endpoint security through antivirus management, patch updates, and system hardening</li>
+          <li>Coordinate with vendors and service providers for hardware repair, internet, and technical support issues</li>
+		  <li>Maintain IT asset inventory, documentation, and audit-ready troubleshooting reports</li>
+          <li>Ensure business continuity through proactive monitoring and rapid incident response</li>
+          <li>Deliver user training and technical guidance to reduce recurring IT issues and improve productivity</li>
+        </ul>
+
+      </div>
+
+    </article>
+
+    <article class="card exp">
+
+      <div class="job">
+
+        <b>One Stop Media & Entertainment</b><br>
+
+        <small>Executive IT (February, 2018 – September, 2022)</small>
+
+        <ul>
+          <li>Configured and maintained routers, switches, firewalls, and VPNs ensuring secure network connectivity</li>
+          <li>Monitored and optimized network performance, improving uptime and data transfer efficiency</li>
+		  <li>Installed system updates, patches, and security fixes to maintain stability and protection</li>
+          <li>Provided end-user IT support for hardware, software, and network issues</li>
+          <li>Maintained documentation of network configurations and IT support procedures</li>
+        </ul>
+
+      </div>
+
+    </article>
+
+    <article class="card exp">
+
+      <div class="job">
+
+        <b>Brac Bank Ltd.</b><br>
+
+        <small>Executive (June,2015 – September, 2017)</small>
+
+        <ul>
+          <li>Handled high-volume data entry tasks with 99%+ accuracy</li>
+          <li>Maintained confidentiality of sensitive company and client information</li>
+		  <li>Organized and maintained digital and physical records for easy retrieval</li>
+        </ul>
+
+      </div>
+
+    </article>
+
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="edu" class="section">
+
+    <div class="section-title">Education</div>
+
+    <div class="card">
+
+      <ul>
+        <li>M.Sc. Computer Science & Engineering (CSE) — Jagannath University (2019)</li>
+        <li>B.Sc. Electronics & Communication Engineering (ECE) — National University (2012)</li>
+		<li>HSC. Science — BCIC Collage (2008)</li>
+		<li>SSC. Science — Pallabi M. I. Model High School (2006)</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+
+    <div class="section-title">Academic Projects</div>
+
+    <div class="card">
+
+      <ul>
+        <li>Smart Reader for Blind & Visually Impaired</li>
+        <li>Campus Radio using Raspberry Pi</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="cert" class="section">
+
+    <div class="card">
+
+      <div class="section-title">Certifications & Cources</div>
+
+      <ul>
+        <li>Networking Basics</li>
+        <li>Network Addressing and Basic Troubleshooting</li>
+        <li>Operating Systems Basics</li>
+		<li>Cybersecurity Introduction</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- LANGUAGES -->
+  <section id="languages" class="section">
+
+    <div class="section-title">Languages</div>
+
+    <div class="card">
+
+      <ul>
+        <li>Bangla — Native</li>
+        <li>English — Professional Working Proficiency</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2026 MD. HASANUZZAMAN RUBEL • IT Portfolio
+  </footer>
+
+</main>
+
+</div>
+
+<script>
+
+/* =========================
+   THEME TOGGLE
+========================= */
+
+function toggleTheme(){
+
+  document.body.classList.toggle("light");
+
+  const themeBtn = document.getElementById("themeToggle");
+
+  if(document.body.classList.contains("light")){
+
+    localStorage.setItem("theme","light");
+    themeBtn.innerHTML = "☀️";
+
+  }else{
+
+    localStorage.setItem("theme","dark");
+    themeBtn.innerHTML = "🌙";
+
+  }
+
+}
+
+/* =========================
+   LOAD SAVED THEME
+========================= */
+
+window.onload = function(){
+
+  const themeBtn = document.getElementById("themeToggle");
+
+  if(localStorage.getItem("theme") === "light"){
+
+    document.body.classList.add("light");
+    themeBtn.innerHTML = "☀️";
+
+  }else{
+
+    themeBtn.innerHTML = "🌙";
+
+  }
+
+}
+
+/* =========================
+   ACTIVE NAV LINK
+========================= */
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+  let current = "";
+
+  sections.forEach(section => {
+
+    const sectionTop = section.offsetTop - 120;
+
+    if(window.scrollY >= sectionTop){
+      current = section.getAttribute("id");
+    }
+
+  });
+
+  navLinks.forEach(link => {
+
+    link.style.color = "var(--muted)";
+
+    if(link.getAttribute("href") === "#" + current){
+      link.style.color = "var(--accent)";
+    }
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>
