@@ -757,7 +757,7 @@ window.onload = function(){
 document.addEventListener("DOMContentLoaded", () => {
 
 /* ACTIVE NAV LINK */
-  const sections = document.querySelectorAll("main section");
+  const sections = Array.from(document.querySelectorAll("main section"));
   const navLinks = document.querySelectorAll(".nav-links a");
 
   let ticking = false;
@@ -771,8 +771,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let current = "";
 
         sections.forEach(section => {
-          const sectionTop = section.offsetTop - 120;
-
+          const sectionTop = section.getBoundingClientRect().top + window.scrollY - 120;
+			
           if (window.scrollY >= sectionTop) {
             current = section.id;
           }
@@ -795,7 +795,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
-	window.dispatchEvent(new Event("scroll"));
+	document.addEventListener("DOMContentLoaded", () => {
+  window.dispatchEvent(new Event("scroll"));
+});
 </script>
 
 </body>
