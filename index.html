@@ -771,7 +771,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let current = "";
 
         sections.forEach(section => {
-          const sectionTop = section.getBoundingClientRect().top + window.scrollY - 120;
+          const sectionTop = section.offsetTop - 120;
 
           if (window.scrollY >= sectionTop) {
             current = section.id;
